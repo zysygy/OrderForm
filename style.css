@@ -12,27 +12,43 @@ textarea {
 	border: 0;
 	resize: none; 
 	overflow: hidden;
+	border: 1px solid black;
 }
 
-#page-wrap { width: 800px; margin: 0 auto; }
+table {
+	/*border: 1px solid black; for testing*/
+}
 
-#company-name { width: 275px; height: 150px; float: left; }
+#page-wrap { width: 900px; margin: 0 auto; }
 
-#order-num { margin-top: 1px; width: 250px; float: right; }
-#order-num td.label { float: left; font-size: 15px; }
+#company-name { width: 500px; float: left; font-size: 30px; }
+
+#order-num { margin-top: 1px; width: 150px; float: right; }
+#order-num td.label { width: 50px; float: left; font-size: 15px; }
+#num-area {width: 75px;}
+
+/*#sh-right {width: 200px; float: right;}*/
+
+.company-info table{
+	float:left;
+}
 
 .form-title {
 	font-size: 20px;
+	float: right;
 }
 
-.company-info table{
-	clear: both;
+.legend {
+	float: right;
+	clear:right;
 }
 
 #fax {
 	float:right;
 }
 
-.company {
+.customer {
 	font-size: 14px;
 }
+
+.customer .name-field, .customer .name-field textarea{ width: 300px; } 
