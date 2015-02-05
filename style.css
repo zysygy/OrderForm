@@ -13,7 +13,7 @@ textarea {
 	resize: none; 
 	overflow: hidden;
 	border: 1px solid black;
-	
+	font-family: Arial, Verdana, sans-serif;
 }
 
 table {
@@ -25,24 +25,45 @@ table {
 #company-name { width: 400px; float: left; font-size: 30px; }
 
 #order-num { margin-top: 1px; width: 150px; float: right; }
-#order-num td.label { width: 50px; float: left; font-size: 15px; }
-#order-num .field {width: 75px;}
+#order-num td.label { width: 55px; float: left; font-size: 15px; }
+#order-num .field { width: 75px; height: 20px;}
 
-#company-info table{ float:left; }
+#company-info table{ float:left; font-size: 13px;}
 
 #fax { float:right;}
 
-#form-title {
-	font-size: 20px;
-	float: right;
-}
+#form-title { font-size: 20px;float: right; }
 
 #legend {
 	float: right;
 	clear:right;
 	padding-top: 10px;
 }
+#legend .item { font-size: 17px; font-weight: bold; }
+#legend .desc { font-size: 13px; }
 
 #customer { font-size: 14px; }
+#customer  .name-field { width: 230px; height: 70px; font-size: 13px } 
+#customer .tel-field { width: 120px; height: 20px;}
+#customer .date-field{ width: 150px; height: 20px;}
 
-#customer  textarea{ width: 200px; height: 70px;} 	
+#order-details table {
+	width: 100%;
+	font-size: 11px;
+}
+#order-details table td, #order-details table th {
+	text-align: center; 
+	border-collapse:collapse; 
+	border:1px solid black;
+	width: 35px;
+}
+
+#order-details table .style-col { width: 70px; }
+#order-details table .qty-col { width: 45px; }
+#order-details table .price-col { width: 50px; }
+
+#colour-labels { font-size: 14px; height: 20px;}
+
+@media print {
+	textarea { border:none; }
+}

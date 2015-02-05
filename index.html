@@ -13,7 +13,7 @@
 		<table id="order-num">
             <tr>
 				<td class="label">Order #</td>
-				<td><textarea maxlength="8" class="field">EDIT567</textarea></td>
+				<td><textarea maxlength="8" class="field">000000</textarea></td>
             </tr>
         </table>
 	</div>
@@ -45,12 +45,12 @@
 	<div id="legend">
 		<table>
 			<tr>
-				<td>*</td>
-				<td>One of each colour</td>
+				<td class="item">*</td>
+				<td class="desc">One of Each Colour</td>
 			</tr>
 			<tr>
-				<td>^</td>
-				<td>Black/Gold/Silver</td>
+				<td class="item">^</td>
+				<td class="desc">Black / Gold / Silver</td>
 			</tr>
 		</table>
 	</div>
@@ -61,62 +61,65 @@
 	<div id="customer">
 		<table>
 			<tr>
-				<td class="label">Company Name</td>
-				<td><textarea class="field" maxlength="85">Persephone's Paraphernalia</textarea></td>
+				<td class="label">Company:</td>
+				<td><textarea class="name-field" maxlength="125">Persephone's Paraphernalia
+123 Fake Street
+Hertzville, PN
+F4T 7I7
+				</textarea></td>
 				<td class="label">Tel:</td>
-				<td><textarea class="field" maxlength="20">123-456-7890</textarea></td>
+				<td><textarea class="tel-field" maxlength="13">123-456-7890</textarea></td>
 				<td class="label">Date:</td>
-				<td><textarea class="field" maxlength="20">December 12, 3004</textarea></td>
+				<td><textarea class="date-field" maxlength="20">December 12, 3004</textarea></td>
 			</tr>
 		</table>
 	</div>
 
-<!--
+	<div id="order-details">
+		<table style="border:1px solid black; border-collapse:collapse;">
+		<tr>
+			<th class="style-col">Style</th>
+			<th>Black</th>
+			<th>Brown</th>
+			<th>White</th>
+			<th>Gray</th>
+			<th>Blue</th>
+			<th>Beige</th>
+			<th>Red</th>
+			<th>Purp.</th>
+			<th>Gold</th>
+			<th>Silver</th>
+			<th>Green</th>
+			<th>Burg.</th>
+			<th>Pink</th>
+			<th>Yel.</th>
+			<th>Oran.</th>
+			<th class="qty-col">Qty</th>
+			<th class="price-col">Price</th>
+		</tr>
+		<tr id="colour-labels">
+			<td class="style-col">123456</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td class="qty-col">1</td>
+			<td class="price-col">36.00</td>
+		</tr>
+</table>
 
 </div>
-
-<table style="border:1px solid black; border-collapse:collapse;">
-<tr>
-	<th>Style</th>
-	<th>Black</th>
-	<th>Brown</th>
-	<th>White</th>
-	<th>Gray</th>
-	<th>Blue</th>
-	<th>Beige</th>
-	<th>Red</th>
-	<th>Purp.</th>
-	<th>Gold</th>
-	<th>Silver</th>
-	<th>Green</th>
-	<th>Burg.</th>
-	<th>Pink</th>
-	<th>Yel.</th>
-	<th>Oran.</th>
-	<th>Qty</th>
-	<th>Price</th>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</table>-->
 
 </div>
 </body>
