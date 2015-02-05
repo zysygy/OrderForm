@@ -25,8 +25,14 @@ table {
 #company-name { width: 400px; float: left; font-size: 30px; }
 
 #order-num { margin-top: 1px; width: 150px; float: right; }
-#order-num td.label { width: 55px; float: left; font-size: 15px; }
-#order-num .field { width: 75px; height: 20px;}
+#order-num td.label { 
+	width: 60px; 
+	float: left; 
+	font-size: 16px; 
+	font-weight:bold; 
+	padding-top: 3px;
+}
+#order-num .field { width: 70px; height: 20px;}
 
 #company-info table{ float:left; font-size: 13px;}
 
@@ -57,10 +63,20 @@ table {
 	border:1px solid black;
 	width: 35px;
 }
-
-#order-details table .style-col { width: 70px; }
-#order-details table .qty-col { width: 45px; }
-#order-details table .price-col { width: 50px; }
+#order-details table th { color: white; background: black;}
+#order-details table textarea {
+	border:none;
+	font-size: 14px;
+	float:right;
+	height: 18px;
+}
+#order-details table .style { width: 70px; }
+#order-details table .style textarea { width: 51px; }
+#order-details table .qty { width: 45px; }
+#order-details table .qty textarea { width: 30px; }
+#order-details table .price{ width: 60px; }
+#order-details table .price textarea { width: 47px; }
+#order-details table .item { width:25px; }
 
 #colour-labels { font-size: 14px; height: 20px;}
 
