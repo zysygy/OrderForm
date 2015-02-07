@@ -28,3 +28,10 @@ CSS
 -starting to learn about relative/static/fixed/absolute positioning
 JS
 -event triggers
+
+07/02/2015
+JS
+-jQuery .on() method for event handling for dynamically added content
+--learned as a result of fiddling with deprecated tag .live()
+CSS
+-precedence hiearchy (inline>id>class>element)

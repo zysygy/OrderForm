@@ -17,6 +17,8 @@ function print_today() {
 }
 
 $(document).ready(function() {
+	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
+	
 	$("#add-item").click(function(){
 		var insert = '<tr class="item-row"><td class="style">\
 		<div class="del-wrap">\
@@ -41,11 +43,11 @@ $(document).ready(function() {
 		<td class="qty"><textarea maxlength="3">999</textarea></td>\
 		<td class="price"><textarea maxlength="6">999.99</textarea></td></tr>';
 		$(".item-row:last").after(insert);
-		if ($(".del-item").length > 0) $(".del-item").show();
+		if ($(".del-item").length > 1) $(".del-item").show();
 	});
 	
-	$(".delete").click(,function(){
-		$(this).parents('.item-row').remove();
+	$( document ).on("click", ".del-item", function(){
+		$(this).parents(".item-row").remove();
 		if ($(".del-item").length < 2) $(".del-item").hide();
 	});
 });

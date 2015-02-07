@@ -53,32 +53,40 @@ table {
 #customer .tel-field { width: 120px; height: 20px;}
 #customer .date-field{ width: 150px; height: 20px;}
 
-#order-details table {
+#colour-labels { font-size: 12px; height: 20px; }
+
+.order-details table {
 	width: 100%;
 	font-size: 11px;
 }
-#order-details table td, #order-details table th {
+.order-details table td, .order-details table th {
 	text-align: center; 
 	border-collapse:collapse; 
 	border:1px solid black;
 	width: 35px;
 }
-#order-details table th { color: white; background: black;}
-#order-details table textarea {
+.order-details table th { color: white; background: black;}
+.order-details table textarea {
 	border:none;
 	font-size: 14px;
 	float:right;
 	height: 18px;
 }
-#order-details table .style { width: 70px; }
-#order-details table .style textarea { width: 51px; }
-#order-details table .qty { width: 45px; }
-#order-details table .qty textarea { width: 30px; }
-#order-details table .price{ width: 60px; }
-#order-details table .price textarea { width: 47px; }
-#order-details table .item { width:25px; }
+.order-details table .style { width: 70px; }
+.order-details table .style textarea { width: 51px; }
+.order-details table .qty { width: 45px; }
+.order-details table .qty textarea { width: 30px; }
+.order-details table .price{ width: 60px; }
+.order-details table .price textarea { width: 47px; }
+.order-details table .item { width:25px; }
 
-#colour-labels { font-size: 12px; height: 20px; }
+#add-item { 
+	text-align: left;
+	font-size: 16px;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-bottom: 2px;
+}
 
 .del-wrap { position: relative; }
 .del-item { 
@@ -90,7 +98,7 @@ table {
 	font-weight: bold; 
 	padding: 0px 3px; 
 	border: 1px solid; 
-	top: -6px; left: -22px; 
+	top: -2px; left: -17px; 
 	font-size: 12px;
 }
 
