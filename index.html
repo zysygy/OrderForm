@@ -2,6 +2,8 @@
 <html lang="en-US">
 <head>
   <link rel="stylesheet" href="style.css">
+  <script src="scripts.js"></script>
+  <script src="jquery-1.11.2.min"></script>
   <title>Crystale Order Form</title>
 </head>
 
@@ -77,7 +79,7 @@ F4T 7I7
 
 	<div id="order-details">
 		<table style="border:1px solid black; border-collapse:collapse;">
-		<tr>
+		<tr id="colour-labels">
 			<th class="style">Style</th>
 			<th>Black</th>
 			<th>Brown</th>
@@ -97,8 +99,13 @@ F4T 7I7
 			<th class="qty">Qty</th>
 			<th class="price">Price</th>
 		</tr>
-		<tr id="colour-labels">
-			<td class="style"><textarea maxlength="6">123456</textarea></td>
+		<tr class="item-row">
+			<td class="style">
+				<div class="del-wrap">
+					<textarea maxlength="6">123456</textarea>
+					<a class="del-item" href="javascript:;" title="Remove Item">X</a>
+				</div>
+			</td>
 			<td><textarea class="item" maxlength="3">1</textarea></td>
 			<td><textarea class="item" maxlength="3">1</textarea></td>
 			<td><textarea class="item" maxlength="3">1</textarea></td>
@@ -117,10 +124,11 @@ F4T 7I7
 			<td class="qty"><textarea maxlength="3">999</textarea></td>
 			<td class="price"><textarea maxlength="6">999.99</textarea></td>
 		</tr>
-</table>
-
-</div>
-
+		<tr>
+			<td colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>
+		</tr>
+		</table>
+	</div>
 </div>
 </body>
 </html>

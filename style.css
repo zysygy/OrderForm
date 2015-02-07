@@ -78,7 +78,21 @@ table {
 #order-details table .price textarea { width: 47px; }
 #order-details table .item { width:25px; }
 
-#colour-labels { font-size: 14px; height: 20px;}
+#colour-labels { font-size: 12px; height: 20px; }
+
+.del-wrap { position: relative; }
+.del-item { 
+	display: block; 
+	color: #000; 
+	text-decoration: none; 
+	position: absolute; 
+	background: #EEEEEE; 
+	font-weight: bold; 
+	padding: 0px 3px; 
+	border: 1px solid; 
+	top: -6px; left: -22px; 
+	font-size: 12px;
+}
 
 @media print {
 	textarea { border:none; }

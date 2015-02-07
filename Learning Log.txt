@@ -1,0 +1,30 @@
+01/02/2015
+Project started
+-general overview on many topics, determining things to learn
+-Learned basics about Git/Github
+-Began to refresh on HTML
+-Started to learn basics of CSS
+Need to Learn 
+-HTML manifests for offline use
+-embedding JS into webpages
+
+02/02/2015
+-Got a handle of git add, commit, push
+-Floating and div alignments
+-id vs class selectors, descendant selectors
+-text area fiddling
+
+03/02/2015
+-found example invoice with useful components to learn from
+-experimentation with textarea
+
+04/02/2015
+-more familiar with CSS and Git best practices
+-http://git-scm.com/book/ch5-2.html
+-skimmed procedures for formatting web page for printing
+
+06/02/2015
+CSS
+-starting to learn about relative/static/fixed/absolute positioning
+JS
+-event triggers in 
