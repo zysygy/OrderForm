@@ -27,4 +27,4 @@ Need to Learn
 CSS
 -starting to learn about relative/static/fixed/absolute positioning
 JS
--event triggers in 
+-event triggers

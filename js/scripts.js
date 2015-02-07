@@ -44,7 +44,7 @@ $(document).ready(function() {
 		if ($(".del-item").length > 0) $(".del-item").show();
 	});
 	
-	$(".delete").on("click",function(){
+	$(".delete").click(,function(){
 		$(this).parents('.item-row').remove();
 		if ($(".del-item").length < 2) $(".del-item").hide();
 	});
