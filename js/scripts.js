@@ -16,6 +16,15 @@ function print_today() {
   return today;
 }
 
+function randSegment (){
+	return(Math.floor((Math.random()*100))).toString();
+}
+
+//Collisions are possible, but should rare enough to be fine
+function genOrdNo () {
+	return (randSegment()+ randSegment() + "-" + randSegment() + randSegment() + randSegment() + "-" + randSegment());
+}
+
 $(document).ready(function() {
 	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
 	
@@ -50,5 +59,9 @@ $(document).ready(function() {
 		$(this).parents(".item-row").remove();
 		if ($(".del-item").length < 2) $(".del-item").hide();
 	});
+	
+	$("#customer .date-field").val(print_today());
+	
+	$("#ord-no").val(genOrdNo());
 });
 

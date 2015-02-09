@@ -24,7 +24,7 @@ table {
 
 #company-name { width: 400px; float: left; font-size: 30px; }
 
-#order-num { margin-top: 1px; width: 150px; float: right; }
+#order-num { margin-top: 1px; width: 220px; float: right; }
 #order-num td.label { 
 	width: 60px; 
 	float: left; 
@@ -32,7 +32,7 @@ table {
 	font-weight:bold; 
 	padding-top: 3px;
 }
-#order-num .field { width: 70px; height: 20px;}
+#order-num .field { width: 130px; height: 20px;}
 
 #company-info table{ float:left; font-size: 13px;}
 
@@ -51,7 +51,7 @@ table {
 #customer { font-size: 14px; }
 #customer  .name-field { width: 230px; height: 70px; font-size: 13px } 
 #customer .tel-field { width: 120px; height: 20px;}
-#customer .date-field{ width: 150px; height: 20px;}
+#customer .date-field{ width: 140px; height: 20px;}
 
 #colour-labels { font-size: 12px; height: 20px; }
 
@@ -80,12 +80,14 @@ table {
 .order-details table .price textarea { width: 47px; }
 .order-details table .item { width:25px; }
 
-#add-item { 
-	text-align: left;
+#add-item {
 	font-size: 16px;
 	padding-top: 2px;
 	padding-left: 5px;
 	padding-bottom: 2px;
+}
+#add-row{
+	text-align: left;
 }
 
 .del-wrap { position: relative; }
