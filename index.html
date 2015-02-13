@@ -9,14 +9,14 @@
 </head>
 
 <body>
-<div id="page-wrap">
+<div class="page-wrap">
 
 	<div id="header-section">
 		<span id="company-name">CRYSTALE Jewellery INC.</span>
 		<table id="order-num">
             <tr>
-				<td class="label">Order #</td>
-				<td><textarea id="ord-no" maxlength="20" class="field">0000000</textarea></td>
+				<td class="label">Order #:</td>
+				<td><textarea maxlength="14" class="field">0000000</textarea></td>
             </tr>
         </table>
 	</div>
@@ -72,15 +72,15 @@ F4T 7I7
 				</textarea></td>
 				<td class="label">Tel:</td>
 				<td><textarea class="tel-field" maxlength="13">123-456-7890</textarea></td>
-				<td class="label">Date:</td>
+				<td class="date-label">Date:</td>
 				<td><textarea class="date-field" maxlength="18"></textarea></td>
 			</tr>
 		</table>
 	</div>
 
 	<div class="order-details">
-		<table style="border:1px solid black; border-collapse:collapse;">
-		<tr id="colour-labels">
+		<table>
+		<tr class="colour-labels">
 			<th class="style">Style</th>
 			<th>Black</th>
 			<th>Brown</th>
@@ -128,6 +128,14 @@ F4T 7I7
 		<tr>
 			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>
 		</tr>
+		</table>
+	</div>
+	<div id="CC">
+		<table>
+			<tr>
+				<td class="cc-label">Credit Card Number:</td>
+				<td><textarea class="cc-field" maxlength="22"></textarea></td>
+			</tr>
 		</table>
 	</div>
 </div>

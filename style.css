@@ -20,21 +20,27 @@ table {
 	/*border: 1px solid black; for testing*/
 }
 
-#page-wrap { width: 7in; margin: 0 auto; }
+.page-wrap { width: 7in; height: 9.6in; margin: 0 auto; padding: 0;}
 
 #company-name { width: 400px; float: left; font-size: 30px; }
 
-#order-num { margin-top: 1px; width: 220px; float: right; }
+#order-num { margin-top: 1px; width: 201px; float: right; }
 #order-num td.label { 
-	width: 60px; 
+	width: 65px; 
 	float: left; 
 	font-size: 16px; 
 	font-weight:bold; 
-	padding-top: 3px;
 }
-#order-num .field { width: 130px; height: 20px;}
+#order-num .field {
+	width: 135px;
+	height: 20px;
+	font-family: Courier New; 
+	font-weight: bold;
+	text-align: right;
+	padding-top: 1px;
+}
 
-#company-info table{ float:left; font-size: 13px;}
+#company-info table{ float:left; font-size: 13px; font-weight: bold;}
 
 #fax { float:right;}
 
@@ -49,15 +55,19 @@ table {
 #legend .desc { font-size: 13px; }
 
 #customer { font-size: 14px; }
+#customer .label, #customer .date-label { font-weight: bold; }
 #customer  .name-field { width: 230px; height: 70px; font-size: 13px } 
-#customer .tel-field { width: 120px; height: 20px;}
-#customer .date-field{ width: 140px; height: 20px;}
+#customer .tel-field { width: 120px; height: 20px; }
+#customer .date-label{ padding-left: 25px; }
+#customer .date-field{ width: 137px; height: 20px; }
 
-#colour-labels { font-size: 12px; height: 20px; }
+.colour-labels { font-size: 12px; height: 20px; }
 
 .order-details table {
 	width: 100%;
 	font-size: 11px;
+	border: 1px solid black; 
+	border-collapse:collapse;
 }
 .order-details table td, .order-details table th {
 	text-align: center; 
@@ -104,6 +114,17 @@ table {
 	font-size: 12px;
 }
 
+#CC table { font-size: 14px; padding-top: 5px;}
+#CC .cc-label { }
+#CC .cc-field { width: 200px; height: 18px;}
+
+@page { 
+	size: auto; 
+	margin: 0.5in; 0.5in; 0in;
+}
+
 @media print {
 	textarea { border:none; }
+	#add-row, .del-item { display: none }
+	-webkit-print-color-adjust:exact; /* Works for Chrome/Safari, no solution for FF/IE */
 }

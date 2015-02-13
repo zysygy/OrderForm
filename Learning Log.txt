@@ -35,3 +35,9 @@ JS
 --learned as a result of fiddling with deprecated tag .live()
 CSS
 -precedence hiearchy (inline>id>class>element)
+
+08/02/2015
+JS
+-jQuery setting values of textarea
+-random number generation to create invoice ID
+
