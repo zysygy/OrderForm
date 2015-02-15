@@ -132,6 +132,9 @@ table {
 @media only screen
 and (min-device-width : 768px) 
 and (max-device-width : 1024px){
+	body {
+		-webkit-text-size-adjust: none;
+	}
 	.order-details table textarea {
 		border: none;
 		font-size: 12px;
