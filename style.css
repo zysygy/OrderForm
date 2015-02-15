@@ -78,7 +78,7 @@ table {
 .order-details table th { color: white; background: black;}
 .order-details table textarea {
 	border:none;
-	font-size: 14px;
+	font-size: 13px;
 	float:right;
 	height: 18px;
 }
@@ -137,7 +137,7 @@ and (max-device-width : 1024px){
 	}
 	.order-details table textarea {
 		border: none;
-		font-size: 12px;
+		font-size: 10px;
 		float:right;
 		height: 18px;
 	}
