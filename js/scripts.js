@@ -92,10 +92,8 @@ function newPage (){
 }	
 
 $(document).ready(function() {
-	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
-	
-	$( document ).on("click","#add-item", function(){
-		var insert = '<tr class="item-row"><td class="style">\
+
+	var insert = '<tr class="item-row"><td class="style">\
 		<div class="del-wrap">\
 		<textarea maxlength="6">123456</textarea>\
 		<a class="del-item" href="javascript:;" title="Remove Item">X</a>\
@@ -117,11 +115,17 @@ $(document).ready(function() {
 		<td><textarea class="item" maxlength="3">1</textarea></td>\
 		<td class="qty"><textarea maxlength="3">999</textarea></td>\
 		<td class="price"><textarea maxlength="6">999.99</textarea></td></tr>';
+	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
+	
+	$( document ).on("click","#add-item", function(){
+		if ($(".item-row").length >= 30){
+			for (i=1; $(".item-row").length < 66; i++){
+			$(".item-row:last").after(insert);
+		}	
+			//$(".item-row:last").after(insert);
+		}
 		newPage();
 		for (i=1; $(".item-row").length < 29; i++){
-			$(".item-row:last").after(insert);
-		}
-		if ($(".item-row").length > 30){
 			$(".item-row:last").after(insert);
 		}
 		if ($(".del-item").length > 1) $(".del-item").show();
@@ -136,6 +140,6 @@ $(document).ready(function() {
 	
 	$("#customer .date-field").val(print_today());
 	
-	$("#order-num .field").val(genOrdNo());
+	$("#order-num .field").append(genOrdNo());
 });
 

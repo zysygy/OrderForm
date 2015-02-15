@@ -24,7 +24,7 @@ table {
 
 #company-name { width: 400px; float: left; font-size: 30px; }
 
-#order-num { margin-top: 1px; width: 201px; float: right; }
+#order-num { margin-top: 1px; width: 190px; float: right; }
 #order-num td.label { 
 	width: 65px; 
 	float: left; 
@@ -32,7 +32,7 @@ table {
 	font-weight:bold; 
 }
 #order-num .field {
-	width: 135px;
+	width: 115px;
 	height: 20px;
 	font-family: Courier New; 
 	font-weight: bold;
@@ -56,11 +56,11 @@ table {
 #legend .desc { font-size: 13px; }
 
 #customer { font-size: 14px; }
-#customer .label, #customer .date-label { font-weight: bold; }
-#customer  .name-field { width: 230px; height: 70px; font-size: 13px } 
-#customer .tel-field { width: 120px; height: 20px; }
-#customer .date-label{ padding-left: 25px; }
-#customer .date-field{ width: 137px; height: 20px; }
+#customer textarea {font-size: 16px;}
+#customer .name-label, #customer .tel-label, #customer .date-label { font-weight: bold; }
+#customer  .name-field { width: 250px; height: 47px; font-size: 13px; }
+#customer .tel-field { width: 112px; height: 20px; margin-top: 7px;}
+#customer .date-field{ width: 137px; height: 20px; margin-top: 7px;}
 
 .colour-labels { font-size: 12px; height: 20px; }
 
@@ -132,7 +132,7 @@ table {
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
 	body {
-		-webkit-text-size-adjust: none;
+		-webkit-text-size-adjust: auto;
 	}
 	.order-details table textarea {
 		border: none;
