@@ -38,6 +38,7 @@ table {
 	font-weight: bold;
 	text-align: right;
 	padding-top: 1px;
+	font-size: 16px;
 }
 
 #company-info table{ float:left; font-size: 13px; font-weight: bold;}
@@ -78,7 +79,7 @@ table {
 .order-details table th { color: white; background: black;}
 .order-details table textarea {
 	border:none;
-	font-size: 14px;
+	font-size: 13px;
 	float:right;
 	height: 18px;
 }
@@ -129,16 +130,13 @@ table {
 	-webkit-print-color-adjust:exact; /* Works for Chrome/Safari, no solution for FF/IE */
 }
 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)
-and (-webkit-min-device-pixel-ratio: 1)  {
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
 	body {
 		-webkit-text-size-adjust: none;
 	}
 	.order-details table textarea {
 		border: none;
-		font-size: 16px;
+		font-size: 12px;
 		float:right;
 		height: 18px;
 	}
