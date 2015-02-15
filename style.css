@@ -125,6 +125,17 @@ table {
 
 @media print {
 	textarea { border:none; }
-	#add-row, .del-item { display: none }
+	#add-row, .del-item { display: none; }
 	-webkit-print-color-adjust:exact; /* Works for Chrome/Safari, no solution for FF/IE */
+}
+
+@media only screen
+and (min-device-width : 768px) 
+and (max-device-width : 1024px){
+	.order-details table textarea {
+		border: none;
+		font-size: 12px;
+		float:right;
+		height: 18px;
+	}
 }
