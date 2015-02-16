@@ -28,7 +28,7 @@ table {
 
 #company-name { width: 400px; float: left; font-size: 30px; }
 
-#order-num { margin-top: 1px; width: 190px; float: right; }
+#order-num { margin-top: 1px; width: 200px; float: right; }
 #order-num td.label { 
 	width: 65px; 
 	float: left; 
@@ -36,7 +36,7 @@ table {
 	font-weight:bold; 
 }
 #order-num .field {
-	width: 125px;
+	width: 135px;
 	height: 20px;
 	font-family: Courier New; 
 	font-weight: bold;
