@@ -20,7 +20,11 @@ table {
 	/*border: 1px solid black; for testing*/
 }
 
-.page-wrap { width: 7in; height: 9.6in; margin: 0 auto; padding: 0;}
+.page-wrap { 
+	width: 7.5in; 
+	height: 10in; 
+	margin: auto;
+}
 
 #company-name { width: 400px; float: left; font-size: 30px; }
 
@@ -37,7 +41,7 @@ table {
 	font-family: Courier New; 
 	font-weight: bold;
 	text-align: right;
-	padding-top: 1px;
+	margin-top: 5px;
 	font-size: 14px;
 }
 
@@ -60,7 +64,8 @@ table {
 #customer .name-label, #customer .tel-label, #customer .date-label { font-weight: bold; }
 #customer  .name-field { width: 250px; height: 47px; font-size: 13px; }
 #customer .tel-field { width: 112px; height: 20px; margin-top: 7px;}
-#customer .date-field{ width: 137px; height: 20px; margin-top: 7px;}
+#customer .date-label{ padding-left: 20px;}
+#customer .date-field{ width: 145px; height: 20px; margin-top: 7px;}
 
 .colour-labels { font-size: 12px; height: 20px; }
 
@@ -79,9 +84,9 @@ table {
 .order-details table th { color: white; background: black;}
 .order-details table textarea {
 	border:none;
-	font-size: 13px;
+	font-size: 14px;
 	float:right;
-	height: 18px;
+	height: 15px;
 }
 .order-details table .style { width: 70px; }
 .order-details table .style textarea { width: 51px; }
@@ -89,7 +94,7 @@ table {
 .order-details table .qty textarea { width: 30px; }
 .order-details table .price{ width: 60px; }
 .order-details table .price textarea { width: 47px; }
-.order-details table .item { width:25px; }
+.order-details table .item { width:25px; height: 18px; }
 
 #add-item {
 	font-size: 16px;
@@ -120,19 +125,25 @@ table {
 #CC .cc-field { width: 200px; height: 18px;}
 
 @page { 
-	size: auto; 
-	margin: 0.5in; 0.5in; 0in;
+	width: 8.5in;
+	height: 11in;
+	/*margin: 0.5in; 0.5in; 0.5in; 0in;*/
+	margin: 0in 0.5in;
 }
 
 @media print {
 	textarea { border:none; }
 	#add-row, .del-item { display: none; }
-	-webkit-print-color-adjust:exact; /* Works for Chrome/Safari, no solution for FF/IE */
+	body { -webkit-print-color-adjust:exact; }/* Works for Chrome/Safari, no solution for FF/IE */
+	
+	.page-wrap { 
+		margin-top: 0.5in;
+	}
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
 	body {
-		-webkit-text-size-adjust: auto;
+		-webkit-text-size-adjust: none;
 	}
 	.order-details table textarea {
 		border: none;

@@ -118,14 +118,14 @@ $(document).ready(function() {
 	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
 	
 	$( document ).on("click","#add-item", function(){
-		if ($(".item-row").length >= 30){
+		if ($(".item-row").length >= 31){
 			for (i=1; $(".item-row").length < 66; i++){
 			$(".item-row:last").after(insert);
 		}	
 			//$(".item-row:last").after(insert);
 		}
 		newPage();
-		for (i=1; $(".item-row").length < 29; i++){
+		for (i=1; $(".item-row").length < 30; i++){
 			$(".item-row:last").after(insert);
 		}
 		if ($(".del-item").length > 1) $(".del-item").show();
