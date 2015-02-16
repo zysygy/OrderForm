@@ -23,7 +23,8 @@ table {
 .page-wrap { 
 	width: 7.5in; 
 	height: 10in; 
-	margin: auto;
+	margin: 0.5in auto;
+	page-break-after: always;
 }
 
 #company-name { width: 400px; float: left; font-size: 30px; }
@@ -116,13 +117,13 @@ table {
 	font-weight: bold; 
 	padding: 0px 3px; 
 	border: 1px solid; 
-	top: -2px; left: -17px; 
+	top: -3px; left: -17px; 
 	font-size: 12px;
 }
 
 #CC table { font-size: 14px; padding-top: 5px;}
 #CC .cc-label { }
-#CC .cc-field { width: 200px; height: 18px;}
+#CC .cc-field { width: 200px; height: 18px; }
 
 @page { 
 	width: 8.5in;
@@ -135,17 +136,10 @@ table {
 	textarea { border:none; }
 	#add-row, .del-item { display: none; }
 	body { -webkit-print-color-adjust:exact; }/* Works for Chrome/Safari, no solution for FF/IE */
-	
-	.page-wrap { 
-		margin-top: 0.5in;
-	}
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
 	body {
 		-webkit-text-size-adjust: none;
-	}
-	.order-details table textarea {
-		font-size: 14px;
 	}
 }

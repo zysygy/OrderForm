@@ -25,6 +25,10 @@ function genOrdNo () {
 	return (randSegment()+ randSegment() + "-" + randSegment() + randSegment() + randSegment() + "-" + randSegment());
 }
 
+//Lots of cleaning up to be done to generalize for more than two pages and use of
+//better jQuery, but temporary solution in place for now
+
+//Only has capacity to add one additional page
 function newPage (){
 	//Could play with clone and append, but going to hard code for now
 	var ret;
@@ -81,10 +85,10 @@ function newPage (){
 		</tr>\
 		</table></div></div>';
 	
-	if ($(".item-row").length == 29 && $(".page-wrap").length < 2){
+	if ($(".item-row").length == 30 && $(".page-wrap").length < 2){
 		//delete add button, insert table header and new row, order no
 		$("#add-row").parents("tr").remove();
-		$("#CC").after(insert);
+		$(".page-wrap:last").after(insert);
 	}
 	/*else if (){ //item-row.length - 29 
 	
@@ -118,21 +122,34 @@ $(document).ready(function() {
 	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
 	
 	$( document ).on("click","#add-item", function(){
-		if ($(".item-row").length >= 31){
+		if ($(".item-row").length != 30 && $(".item-row").length != 68){
+			$(".item-row:last").after(insert);
+		}
+		else {
+			newPage();
+		}
+		/*if ($(".item-row").length >= 31){
 			for (i=1; $(".item-row").length < 66; i++){
 			$(".item-row:last").after(insert);
-		}	
-			//$(".item-row:last").after(insert);
-		}
-		newPage();
-		for (i=1; $(".item-row").length < 30; i++){
+		}*/
+		
+		/*for (i=1; $(".item-row").length < 30; i++){
 			$(".item-row:last").after(insert);
-		}
+		}*/
 		if ($(".del-item").length > 1) $(".del-item").show();
 	});
 	
 	$( document ).on("click", ".del-item", function(){
-		$(this).parents(".item-row").remove();
+		var addHTML = '<tr>\
+			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>\
+			</tr>'
+		if ($(".item-row").length == 31){
+			$(this).parents(".page-wrap").remove();
+			$(".item-row:last").after(addHTML);
+		}
+		else {
+			$(this).parents(".item-row").remove();
+		}	
 		if ($(".del-item").length < 2) $(".del-item").hide();
 	});
 	
