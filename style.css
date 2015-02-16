@@ -146,9 +146,6 @@ table {
 		-webkit-text-size-adjust: none;
 	}
 	.order-details table textarea {
-		border: none;
-		font-size: 12px;
-		float:right;
-		height: 18px;
+		font-size: 14px;
 	}
 }
