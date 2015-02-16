@@ -93,8 +93,8 @@ table {
 .order-details table .qty { width: 45px; }
 .order-details table .qty textarea { width: 30px; }
 .order-details table .price{ width: 60px; }
-.order-details table .price textarea { width: 47px; }
-.order-details table .item { width:25px; height: 18px; }
+.order-details table .price textarea { width: 50px; }
+.order-details table .item { width:28px; height: 18px; }
 
 #add-item {
 	font-size: 16px;
