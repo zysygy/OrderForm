@@ -58,27 +58,27 @@ function newPage (){
 		<tr class="item-row">\
 			<td class="style">\
 				<div class="del-wrap">\
-					<textarea maxlength="6">123456</textarea>\
+					<textarea maxlength="6"></textarea>\
 					<a class="del-item" href="javascript:;" title="Remove Item">X</a>\
 				</div>\
 			</td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td><textarea class="item" maxlength="3">1</textarea></td>\
-			<td class="qty"><textarea maxlength="3">999</textarea></td>\
-			<td class="price"><textarea maxlength="6">999.99</textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td><textarea class="item" maxlength="3"></textarea></td>\
+			<td class="qty"><textarea maxlength="3"></textarea></td>\
+			<td class="price"><textarea maxlength="6"></textarea></td>\
 		</tr>\
 		<tr>\
 			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>\
@@ -102,23 +102,23 @@ $(document).ready(function() {
 		<textarea maxlength="6">123456</textarea>\
 		<a class="del-item" href="javascript:;" title="Remove Item">X</a>\
 		</div></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td><textarea class="item" maxlength="3">1</textarea></td>\
-		<td class="qty"><textarea maxlength="3">999</textarea></td>\
-		<td class="price"><textarea maxlength="6">999.99</textarea></td></tr>';
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td><textarea class="item" maxlength="3"></textarea></td>\
+		<td class="qty"><textarea maxlength="3"></textarea></td>\
+		<td class="price"><textarea maxlength="6"></textarea></td></tr>';
 	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
 	
 	$( document ).on("click","#add-item", function(){
