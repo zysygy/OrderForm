@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 	var insert = '<tr class="item-row"><td class="style">\
 		<div class="del-wrap">\
-		<textarea maxlength="6">123456</textarea>\
+		<textarea maxlength="6"></textarea>\
 		<a class="del-item" href="javascript:;" title="Remove Item">X</a>\
 		</div></td>\
 		<td><textarea class="item" maxlength="3"></textarea></td>\
@@ -160,3 +160,26 @@ $(document).ready(function() {
 	$("#order-num .field").append(genOrdNo());
 });
 
+
+//Notes
+
+/*
+---Bugs---
+
+If row is deleted from first page while a second page exists, rows on second page
+will not automatically shift up to first row. Trying to then delete a row from the
+second page will delete whole table
+
+Solution is to implement loop that automatically shifts all rows up a page;
+possible performance issues with large sets of data
+
+---Things to Implement---
+
+Greater flexibility can be added with use of clone/append instead of straight 
+hardcoded HTML sections
+
+More generalized algorithm to add 
+
+Order Number can be duplicated on subsequent pages
+
+*/
