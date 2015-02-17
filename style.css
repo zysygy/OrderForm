@@ -90,11 +90,11 @@ table {
 	height: 15px;
 }
 .order-details table .style { width: 70px; }
-.order-details table .style textarea { width: 51px; }
+.order-details table .style textarea { width: 58px; }
 .order-details table .qty { width: 45px; }
 .order-details table .qty textarea { width: 30px; }
 .order-details table .price{ width: 60px; }
-.order-details table .price textarea { width: 50px; }
+.order-details table .price textarea { width: 52px; }
 .order-details table .item { width:28px; height: 18px; }
 
 #add-item {
