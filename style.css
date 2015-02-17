@@ -88,9 +88,10 @@ table {
 	font-size: 13px;
 	float:right;
 	height: 15px;
+	text-align: right;
 }
 .order-details table .style { width: 70px; }
-.order-details table .style textarea { width: 58px; }
+.order-details table .style textarea { width: 63px; }
 .order-details table .qty { width: 45px; }
 .order-details table .qty textarea { width: 30px; }
 .order-details table .price{ width: 60px; }
