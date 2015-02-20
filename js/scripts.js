@@ -25,79 +25,8 @@ function genOrdNo () {
 	return (randSegment()+ randSegment() + "-" + randSegment() + randSegment() + randSegment() + "-" + randSegment());
 }
 
-//Lots of cleaning up to be done to generalize for more than two pages and use of
-//better jQuery, but temporary solution in place for now
-
-//Only has capacity to add one additional page
-function newPage (){
-	//Could play with clone and append, but going to hard code for now
-	var ret;
-	var insert = '<div class="page-wrap">\
-		<div class="order-details">\
-		<table>\
-		<tr id="colour-labels">\
-			<th class="style">Style</th>\
-			<th>Black</th>\
-			<th>Brown</th>\
-			<th>White</th>\
-			<th>Gray</th>\
-			<th>Blue</th>\
-			<th>Beige</th>\
-			<th>Red</th>\
-			<th>Purp.</th>\
-			<th>Gold</th>\
-			<th>Silver</th>\
-			<th>Green</th>\
-			<th>Burg.</th>\
-			<th>Pink</th>\
-			<th>Yel.</th>\
-			<th>Oran.</th>\
-			<th class="qty">Qty</th>\
-			<th class="price">Price</th>\
-		</tr>\
-		<tr class="item-row">\
-			<td class="style">\
-				<div class="del-wrap">\
-					<textarea maxlength="6"></textarea>\
-					<a class="del-item" href="javascript:;" title="Remove Item">X</a>\
-				</div>\
-			</td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td><textarea class="item" maxlength="3"></textarea></td>\
-			<td class="qty"><textarea maxlength="3"></textarea></td>\
-			<td class="price"><textarea maxlength="6"></textarea></td>\
-		</tr>\
-		<tr>\
-			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>\
-		</tr>\
-		</table></div></div>';
-	
-	if ($(".item-row").length == 30 && $(".page-wrap").length < 2){
-		//delete add button, insert table header and new row, order no
-		$("#add-row").parents("tr").remove();
-		$(".page-wrap:last").after(insert);
-	}
-	/*else if (){ //item-row.length - 29 
-	
-	}*/
-}	
-
-$(document).ready(function() {
-
-	var insert = '<tr class="item-row"><td class="style">\
+//Should be using jQuery clone, but hardcoding for now
+var items = '<tr class="item-row"><td class="style">\
 		<div class="del-wrap">\
 		<textarea maxlength="6"></textarea>\
 		<a class="del-item" href="javascript:;" title="Remove Item">X</a>\
@@ -119,44 +48,117 @@ $(document).ready(function() {
 		<td><textarea class="item" maxlength="3"></textarea></td>\
 		<td class="qty"><textarea maxlength="3"></textarea></td>\
 		<td class="price"><textarea maxlength="6"></textarea></td></tr>';
+var addRow = '<tr>\
+			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>\
+			</tr>';		
+var tHeader = '<thead>\
+			<tr id="colour-labels">\
+			<th class="style">Style</th>\
+			<th>Black</th>\
+			<th>Brown</th>\
+			<th>White</th>\
+			<th>Gray</th>\
+			<th>Blue</th>\
+			<th>Beige</th>\
+			<th>Red</th>\
+			<th>Purp.</th>\
+			<th>Gold</th>\
+			<th>Silver</th>\
+			<th>Green</th>\
+			<th>Burg.</th>\
+			<th>Pink</th>\
+			<th>Yel.</th>\
+			<th>Oran.</th>\
+			<th class="qty">Qty</th>\
+			<th class="price">Price</th>\
+		</tr>\
+		</thead>';
+		
+//Only has capacity to add one additional page
+function newPage (){
+	//Could play with clone and append, but going to hard code for now
+	var insert = '<div class="page-wrap">\
+		<div class="order-details">\
+		<table class="items">'+
+		tHeader+
+		'<tbody>'+
+		items+
+		addRow+
+		'</tbody></table></div></div>';
+	if ($(".item-row").length == 30 && $(".page-wrap").length < 2){
+		//delete add button, insert table header and new row, order no
+		$("#add-row").parents("tr").remove();
+		$(".page-wrap:last").after(insert);
+	}
+}
+
+//Not generalized to handle more than one page
+//Made a separate function for when generalizations are written
+
+function shiftUp(){
+	var rowCopy = $(".page-wrap:eq(1) .item-row:first").clone();
+	$(".page-wrap:eq(0) .items tbody").append(rowCopy);
+}
+
+//First Page has max 30 items, second page has max 36
+
+$(document).ready(function() {
+	
 	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
 	
+	//Add
 	$( document ).on("click","#add-item", function(){
 		if ($(".item-row").length != 30 && $(".item-row").length != 68){
-			$(".item-row:last").after(insert);
+			$(".item-row:last").after(items);
 		}
 		else {
 			newPage();
 		}
+		if ($(".del-item").length > 1) $(".del-item").show();
+		
+		//Testing
 		/*if ($(".item-row").length >= 31){
 			for (i=1; $(".item-row").length < 66; i++){
 			$(".item-row:last").after(insert);
-		}*/
 		
-		/*for (i=1; $(".item-row").length < 30; i++){
+		for (i=1; $(".item-row").length < 30; i++){
 			$(".item-row:last").after(insert);
 		}*/
-		if ($(".del-item").length > 1) $(".del-item").show();
+		
 	});
 	
+	//Delete
 	$( document ).on("click", ".del-item", function(){
-		var addHTML = '<tr>\
-			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>\
-			</tr>'
-		if ($(".item-row").length == 31){
-			$(this).parents(".page-wrap").remove();
-			$(".item-row:last").after(addHTML);
+
+		$(this).parents(".item-row").remove();
+		
+		//Clear Second Page If Empty
+		if ($(".page-wrap").length > 1) {
+			if ($(".page-wrap:eq(1) .items .item-row").length == 0){
+				$(".page-wrap:eq(1)").remove();
+				$(".item-row:last").after(addRow);
+			}
 		}
-		else {
-			$(this).parents(".item-row").remove();
-		}	
+		
+		//Otherwise Shift Rows Up
+		if ($(".items:first .item-row").length < 30 && $(".page-wrap").length > 1){
+			shiftUp();
+			if ($(".items:eq(1) .item-row").length == 1){
+				$(".page-wrap:eq(1)").remove();
+				$(".item-row:last").after(addRow);
+			}
+			else {
+				$(".items:eq(1) .item-row:first").remove();
+			}
+		}
 		if ($(".del-item").length < 2) $(".del-item").hide();
 	});
 	
-	//if there are >29 item rows, insert new page
 	
+	//Date
 	$("#customer .date-field").val(print_today());
 	
+	//Generate Order Number
 	$("#order-num .field").append(genOrdNo());
 });
 

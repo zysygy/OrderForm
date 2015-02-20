@@ -4,6 +4,7 @@
   <meta charset='UTF-8'>
   <link rel="stylesheet" href="style.css">
   <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/jquery.fix.clone.js"></script>
   <script src="js/scripts.js"></script>
   <title>Crystale Order Form</title>
 </head>
@@ -21,10 +22,10 @@
         </table>
 	</div>
 	
+	<!--Divider-->
 	<div style="clear:both"></div>
 	
 	<div id="subheader-section">
-	
 	<div id="company-info">
 		<table>
 			<tr>
@@ -44,6 +45,7 @@
 			</tr>
 		</table>
 	</div>
+	
 	<div id="form-title">Order Form</div>
 	<div id="legend">
 		<table>
@@ -57,8 +59,9 @@
 			</tr>
 		</table>
 	</div>
-
 	</div>
+	
+	<!--Divider-->
 	<div style="clear:both"></div>
 	
 	<div id="customer">
@@ -75,7 +78,8 @@
 	</div>
 
 	<div class="order-details">
-		<table>
+		<table class="items">
+		<thead>
 		<tr class="colour-labels">
 			<th class="style">Style</th>
 			<th>Black</th>
@@ -84,7 +88,7 @@
 			<th>Gray</th>
 			<th>Blue</th>
 			<th>Beige</th>
-			<th>Red</th>
+			<th>Red</th>	
 			<th>Purp.</th>
 			<th>Gold</th>
 			<th>Silver</th>
@@ -96,6 +100,8 @@
 			<th class="qty">Qty</th>
 			<th class="price">Price</th>
 		</tr>
+		</thead>
+		<tbody>
 		<tr class="item-row">
 			<td class="style">
 				<div class="del-wrap">
@@ -124,8 +130,10 @@
 		<tr>
 			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>
 		</tr>
+		</tbody>
 		</table>
 	</div>
+	
 	<div id="CC">
 		<table>
 			<tr>
