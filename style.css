@@ -123,8 +123,8 @@ table {
 }
 
 #CC table { font-size: 14px; padding-top: 5px;}
-#CC .cc-label { }
-#CC .cc-field { width: 200px; height: 18px; }
+#CC .cc-field { width: 160px; height: 18px; }
+#CC .exp-field  { width: 100px; height: 18px; }
 
 @page { 
 	width: 8.5in;
