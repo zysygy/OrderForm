@@ -20,12 +20,12 @@ function randSegment (){
 	return(Math.floor((Math.random()*100))).toString();
 }
 
-//Collisions are possible, but should rare enough to be fine
+//Collisions are quite possible, but should be sufficiently uncommon
 function genOrdNo () {
 	return (randSegment() + "-" + randSegment() + randSegment());
 }
 
-//Should be using jQuery clone, but hardcoding for now
+//Should be using jQuery .clone(), but hardcoding for now
 var items = '<tr class="item-row"><td class="style">\
 		<div class="del-wrap">\
 		<textarea maxlength="6"></textarea>\
@@ -48,9 +48,10 @@ var items = '<tr class="item-row"><td class="style">\
 		<td><textarea class="item" maxlength="3"></textarea></td>\
 		<td class="qty"><textarea maxlength="3"></textarea></td>\
 		<td class="price"><textarea maxlength="6"></textarea></td></tr>';
+//Not used, for previous version
 var addRow = '<tr>\
 			<td id="add-row" colspan="18"><a id="add-item" href="javascript:;" title="Add item">Add Item</a></td>\
-			</tr>';		
+			</tr>';
 var tHeader = '<thead>\
 			<tr id="colour-labels">\
 			<th class="style">Style</th>\
@@ -75,6 +76,7 @@ var tHeader = '<thead>\
 		</thead>';
 		
 //Only has capacity to add one additional page
+//Not used in this version of app
 function newPage (){
 	//Could play with clone and append, but going to hard code for now
 	var insert = '<div class="page-wrap">\
@@ -83,7 +85,6 @@ function newPage (){
 		tHeader+
 		'<tbody>'+
 		items+
-		addRow+
 		'</tbody></table></div></div>';
 	if ($(".item-row").length == 30 && $(".page-wrap").length < 2){
 		//delete add button, insert table header and new row, order no
@@ -94,7 +95,7 @@ function newPage (){
 
 //Not generalized to handle more than one page
 //Made a separate function for when generalizations are written
-
+//Not used in this version of app
 function shiftUp(){
 	var rowCopy = $(".page-wrap:eq(1) .item-row:first").clone();
 	$(".page-wrap:eq(0) .items tbody").append(rowCopy);
@@ -104,9 +105,27 @@ function shiftUp(){
 
 $(document).ready(function() {
 	
-	$(".del-item").hide(); //Hide initial delete button to prevent accidental use
+	//Populate Page Rows
+	for (i = 1; i < 30; i++){
+		$(".item-row:last").after(items);
+	}
+	
+	//Clear Row
+	$( document ).on("click", ".del-item", function(){
+		$(this).parents(".item-row").replaceWith(items);
+	});
+	
+	//Date
+	$("#customer .date-field").val(print_today());
+	
+	//Generate Order Number
+	$("#order-num .field").append(genOrdNo());
+	
+	/*
+	// $(".del-item").hide(); //Hide initial delete button to prevent accidental use
 	
 	//Add
+	//Not used in this version of app
 	$( document ).on("click","#add-item", function(){
 		if ($(".item-row").length != 30 && $(".item-row").length != 68){
 			$(".item-row:last").after(items);
@@ -123,11 +142,12 @@ $(document).ready(function() {
 		
 		for (i=1; $(".item-row").length < 30; i++){
 			$(".item-row:last").after(insert);
-		}*/
+		}
 		
 	});
 	
 	//Delete
+	//Not used in this version of app
 	$( document ).on("click", ".del-item", function(){
 
 		$(this).parents(".item-row").remove();
@@ -153,13 +173,9 @@ $(document).ready(function() {
 		}
 		if ($(".del-item").length < 2) $(".del-item").hide();
 	});
+	*/
 	
-	
-	//Date
-	$("#customer .date-field").val(print_today());
-	
-	//Generate Order Number
-	$("#order-num .field").append(genOrdNo());
+
 });
 
 
