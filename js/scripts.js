@@ -110,6 +110,9 @@ $(document).ready(function() {
 		$(".item-row:last").after(items);
 	}
 	
+	//Could also use pos:sticky http://stackoverflow.com/questions/2907367/	
+	$(".colour-labels").stick_in_parent();
+	
 	//Clear Row
 	$( document ).on("click", ".del-item", function(){
 		$(this).parents(".item-row").replaceWith(items);
