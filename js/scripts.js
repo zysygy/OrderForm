@@ -22,7 +22,7 @@ function randSegment (){
 
 //Collisions are possible, but should rare enough to be fine
 function genOrdNo () {
-	return (randSegment()+ randSegment() + "-" + randSegment() + randSegment() + randSegment() + "-" + randSegment());
+	return (randSegment() + "-" + randSegment() + randSegment());
 }
 
 //Should be using jQuery clone, but hardcoding for now
