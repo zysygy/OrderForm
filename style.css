@@ -61,14 +61,24 @@ table {
 #customer .date-label{ padding-left: 20px;}
 #customer .date-field{ width: 145px; height: 20px; margin-top: 7px;}
 
-.colour-labels { font-size: 12px; z-index: 2;}
-
 .order-details table {
 	width: 100%;
 	font-size: 11px;
 	border: 1px solid black; 
 	border-collapse:collapse;
 }
+
+.order-details thead {
+	font-size: 12px;
+	position: absolute;
+	z-index: 2;
+}
+
+.order-details tbody {
+	position: relative;
+	top: 15px;
+}
+
 .order-details table td, .order-details table th {
 	text-align: center; 
 	border-collapse:collapse; 
