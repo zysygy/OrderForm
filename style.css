@@ -61,7 +61,7 @@ table {
 #customer .date-label{ padding-left: 20px;}
 #customer .date-field{ width: 145px; height: 20px; margin-top: 7px;}
 
-.colour-labels { font-size: 12px; z-index: 2; }
+.colour-labels { font-size: 12px; z-index: 2; position:fixed;}
 
 .order-details table {
 	width: 100%;
@@ -73,9 +73,10 @@ table {
 	text-align: center; 
 	border-collapse:collapse; 
 	border:1px solid black;
-	width: 35px;
+	width: 32px;
 }
 .order-details table th { color: white; background: black;}
+.order-details thead {width: 100%;}
 .order-details table textarea {
 	border:none;
 	font-size: 13px;
