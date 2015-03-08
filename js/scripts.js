@@ -110,8 +110,82 @@ $(document).ready(function() {
 		$(".item-row:last").after(items);
 	}
 	
-	//Could also use pos:sticky http://stackoverflow.com/questions/2907367/	
-	$(".colour-labels").stick_in_parent();
+	//----Sticky Header Stuff----
+	//http://tympanus.net/codrops/2014/01/09/sticky-table-headers-columns/
+	var $w = $(window),
+		$t = $(".order-details table"),
+		$thead = $t.find('thead').clone();
+		
+	$t.wrap('<div class="sticky-wrap" />');
+	$t.after('<table class="sticky-thead" />');
+	
+	var $stickyHead = $t.siblings('.sticky-thead'),
+		$stickyWrap  = $t.parent('.sticky-wrap');
+		
+	$stickyHead.append($thead);
+	
+	var setWidths = function () {
+			$t.find('thead th').each(function (i) {
+				$stickyHead.find('th').eq(i).width($(this).width());
+			});
+		},
+		repositionStickyHead = function (){
+			
+			// Check if wrapper parent is overflowing along the y-axis
+			// If it is overflowing
+            // Position sticky header based on wrapper's scrollTop()
+			if($t.height() > $stickyWrap.height()) {
+				if($stickyWrap.scrollTop() > 0) {
+                // When top of wrapping parent is out of view
+					$stickyHead.css({
+						opacity: 1,
+						top: $stickyWrap.scrollTop()
+					});
+				} 
+				else {
+                // When top of wrapping parent is in view
+					$stickyHead.css({
+						opacity: 0,
+						top: 0
+					});
+				}
+			}
+			else {
+			// If it is not overflowing (basic layout)
+            // Position sticky header based on viewport scrollTop()
+			
+			// When top of viewport is within the table minus an allowance at bottom of table
+				if($w.scrollTop() > $t.offset().top && $w.scrollTop() < $t.offset().top + $t.outerHeight()) {
+					 $stickyHead.css({
+						opacity: 1,
+					   top: $w.scrollTop() - $t.offset().top
+					});
+				}
+				else {
+				// When top of viewport is above or below table
+                // Action: Hide sticky header
+					$stickyHead.css({
+						 opacity: 0,
+						 top: 0
+					 });
+				}
+			}
+		};
+	
+	setWidths();
+	
+	$t.parent('.sticky-wrap').scroll($.throttle(15, function() {
+		repositionStickyHead();
+	}));
+	
+	$w
+	.load(setWidths)
+	//----Sticky Header----
+	.resize($.debounce(250, function () {
+		setWidths();
+		repositionStickyHead();
+	}))
+	.scroll($.throttle(15, repositionStickyHead));
 	
 	//Clear Row
 	$( document ).on("click", ".del-item", function(){

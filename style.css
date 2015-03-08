@@ -23,7 +23,7 @@ table {
 .page-wrap { 
 	width: 7.5in; 
 	height: 10in; 
-	margin: 0.5in auto;
+	margin: 0.3in auto;
 	page-break-after: always;
 }
 
@@ -61,29 +61,50 @@ table {
 #customer .date-label{ padding-left: 20px;}
 #customer .date-field{ width: 145px; height: 20px; margin-top: 7px;}
 
+.sticky-wrap {
+	position: relative;
+	overflow-x: auto;
+}
+
+.sticky-wrap .sticky-thead {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	width: auto;
+}
+
+.sticky-wrap .sticky-thead {
+	z-index: 100;
+	width: 100%;
+}
+
+.sticky-wrap td, .sticky-wrap th {
+	box-sizing: border-box;
+}
+
 .order-details table {
 	width: 100%;
-	font-size: 11px;
 	border: 1px solid black; 
 	border-collapse:collapse;
+	margin: 0;
 }
 
 .order-details thead {
-	font-size: 12px;
-	position: absolute;
+	font-size: 13px;
+	position: relative;
 	z-index: 2;
 }
 
 .order-details tbody {
 	position: relative;
-	top: 15px;
 }
 
 .order-details table td, .order-details table th {
 	text-align: center; 
 	border-collapse:collapse; 
-	border:1px solid black;
-	width: 32px;
+	border: 1px solid black;
 }
 .order-details table th { color: white; background: black;}
 .order-details thead {width: 100%;}
@@ -91,11 +112,15 @@ table {
 	border:none;
 	font-size: 13px;
 	float:right;
-	height: 15px;
+	height: 13px;
 	text-align: right;
 }
 .order-details table .style { width: 70px; }
-.order-details table .style textarea { width: 63px; }
+.order-details table .style textarea { 
+	width: 63px; 
+	font-size: 15px; 
+	font-weight: 600; 
+}
 .order-details table .qty { width: 45px; }
 .order-details table .qty textarea { width: 30px; }
 .order-details table .price{ width: 60px; }
@@ -126,9 +151,10 @@ table {
 	font-size: 12px;
 }
 
-#CC table { font-size: 14px; padding-top: 5px;}
-#CC .cc-field { width: 160px; height: 18px; }
-#CC .exp-field  { width: 100px; height: 18px; }
+#CC table { font-size: 14px; padding-top: 2px;}
+#CC textarea  {font-size: 14px;}
+#CC .cc-field { width: 160px; height: 15px; padding-top: 6px}
+#CC .exp-field  { width: 105px; height: 15px; padding-top: 6px}
 
 @page { 
 	width: 8.5in;
@@ -139,7 +165,7 @@ table {
 
 @media print {
 	textarea { border:none; }
-	#add-row, .del-item { display: none; }
+	#add-row, .del-item, .sticky-thead { display: none; }
 	body { -webkit-print-color-adjust:exact; }/* Works for Chrome/Safari, no solution for FF/IE */
 }
 
