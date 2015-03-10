@@ -16,14 +16,6 @@ textarea {
 	font-family: Arial, Verdana, sans-serif;
 }
 
-textarea:focus {
-  font-size: 16px;
-}
-
-table {
-	/*border: 1px solid black; for testing*/
-}
-
 .page-wrap { 
 	width: 7.5in; 
 	height: 10in; 
