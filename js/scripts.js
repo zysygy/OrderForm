@@ -113,7 +113,7 @@ $(document).ready(function() {
 	//No viewport refocus on element focus
 	$( document ).on("mousedown", "textarea", function(event){
 		event.preventDefault();
-		this.setActive();
+		$(this).setActive();
 		/*var xPos = window.pageXOffset;
 		var yPos = window.pageYOffset;
 		window.scrollTo(xPos,yPos);*/
