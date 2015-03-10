@@ -111,7 +111,7 @@ $(document).ready(function() {
 	}
 	
 	//No viewport refocus on element focus
-	$( document ).on("focus", "textarea", function(event){
+	$( document ).on("click", "textarea", function(event){
 		event.preventDefault();
 		this.setActive;
 		/*var xPos = window.pageXOffset;
