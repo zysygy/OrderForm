@@ -110,6 +110,13 @@ $(document).ready(function() {
 		$(".item-row:last").after(items);
 	}
 	
+	//No viewport refocus on element focus
+	$( document ).on("focus", "textarea", function(){
+		var xPos = window.pageXOffset;
+		var yPos = window.pageYOffset;
+		window.scrollTo(xPos,yPos);
+	});
+	
 	//----Sticky Header Stuff----
 	//http://tympanus.net/codrops/2014/01/09/sticky-table-headers-columns/
 	var $w = $(window),
