@@ -112,10 +112,10 @@ $(document).ready(function() {
 	
 	//No viewport refocus on element focus
 	$( document ).on("focus", "textarea", function(event){
-		event.preventDefault();
-		var xPos = window.pageXOffset;
+		return false;
+		/*var xPos = window.pageXOffset;
 		var yPos = window.pageYOffset;
-		window.scrollTo(xPos,yPos);
+		window.scrollTo(xPos,yPos);*/
 	});
 	
 	//----Sticky Header Stuff----
