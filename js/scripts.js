@@ -119,7 +119,7 @@ $(document).ready(function() {
 		window.scrollTo(xPos,yPos);
 	});
 	
-	$("textarea").blur(function(event){
+	$("textarea").focus(function(event){
 		return false;
 	});
 	
