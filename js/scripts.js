@@ -112,6 +112,7 @@ $(document).ready(function() {
 	
 	//No viewport refocus on element focus
 	$( document ).on("focus", "textarea", function(){
+		preventDefault();
 		var xPos = window.pageXOffset;
 		var yPos = window.pageYOffset;
 		window.scrollTo(xPos,yPos);
